@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+        <h3 class="mb-0">Listado de Personas</h3>
+        <button class="btn btn-light text-primary fw-bold rounded-pill" [routerLink]="'/crear-persona'">
+        <i class="bi bi-person-plus"></i> Agregar Persona
+        </button>
+    </div>
+    <div class="card-body">
+        <span>Listado de personas:</span>
+        <h5 style="margin-top: 30px;" *ngIf='ingreso.length == 0'>No hay personas registradas</h5>
+        <table *ngIf='ingreso.length' class="table table-hover table-bordered mt-3 table-striped">
+        <thead>
+            <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Celular</th>
+            <th>Email</th>
+            <th>Ubicación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let persona of ingreso">
+            <td>{{ persona.nombre }}</td>
+            <td>{{ persona.apellido }}</td>
+            <td>{{ persona.celular }}</td>
+            <td>{{ persona.email }}</td>
+            <td>{{ persona.ubicacion }}</td>
+            <td>
+                <i class="fas fa-edit text-primary" [routerLink]="['/editarPersona/', persona.id]"></i>
+
+
+                <i (click)="eliminarPersona(persona.id)" class="fas fa-trash text-danger"></i>
+            </td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+

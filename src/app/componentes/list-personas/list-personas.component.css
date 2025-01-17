@@ -1,0 +1,15 @@
+.fas{
+    cursor: pointer;
+    margin-left: 9px;
+}
+
+.container {
+    max-width: 800px;
+}
+.card {
+    border-radius: 10px;
+}
+.btn {
+    cursor: pointer;
+}
+
